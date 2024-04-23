@@ -1,0 +1,15 @@
+table.data {
+    background-color: blue;
+}
+
+th.data {
+    background-color: lightblue;
+}
+
+td.data {
+    background-color: white;
+}
+
+body{
+    background-color: beige;
+}

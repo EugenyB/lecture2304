@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Все студенты</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <h1>Все студенты</h1>
+    <table class="data">
+        <thead>
+        <tr>
+            <th class="data">№</th>
+            <th class="data">Имя</th>
+            <th class="data">Возраст</th>
+            <th class="data">Рейтинг</th>
+            <th class="data">Х</th>
+        </tr>
+        </thead>
+        <tbody>
+            <tr th:each="s : ${students}">
+                <td class="data" th:text="${s.id}"></td>
+                <td class="data" th:text="${s.name}"></td>
+                <td class="data" th:text="${s.age}"></td>
+                <td class="data" th:text="${s.rating}"></td>
+                <td class="data"><a th:href="@{/delete_student(id=${s.id})}">удалить</a></td>
+            </tr>
+        </tbody>
+    </table>
+    <form action="addstudent" method="post">
+        <table>
+            <tr>
+                <td><label for="id">№ студенческого</label> </td>
+                <td><input id="id" type="text" name="id" required></td>
+            </tr>
+            <tr>
+                <td><label for="name">Имя</label> </td>
+                <td><input id="name" type="text" name="name" required></td>
+            </tr>
+            <tr>
+                <td><label for="age">Возраст</label></td>
+                <td><input id="age" type="number" name="age" required></td>
+            </tr>
+            <tr>
+                <td><label for="rating">Рейтинг</label></td>
+                <td><input id="rating" type="number" name="rating" step="0.1" required></td>
+            </tr>
+        </table>
+        <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>

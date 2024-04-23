@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Добавление студента</title>
+    <link rel="stylesheet" type="text/css" href="/styles.css">
+</head>
+<body>
+    <form action="addstudent" method="post">
+      <table>
+          <tr>
+              <td><label for="id">№ студенческого</label> </td>
+              <td><input id="id" type="text" name="id" required></td>
+          </tr>
+        <tr>
+          <td><label for="name">Имя</label> </td>
+          <td><input id="name" type="text" name="name" required></td>
+        </tr>
+        <tr>
+          <td><label for="age">Возраст</label></td>
+          <td><input id="age" type="number" name="age" required></td>
+        </tr>
+        <tr>
+          <td><label for="rating">Рейтинг</label></td>
+          <td><input id="rating" type="number" name="rating" step="0.1" required></td>
+        </tr>
+      </table>
+      <button type="submit">Добавить</button>
+    </form>
+</body>
+</html>
